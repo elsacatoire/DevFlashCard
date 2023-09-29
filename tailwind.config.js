@@ -4,7 +4,19 @@ module.exports = {
         "./src/**/*.{html,ts}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                'sitecolors': {
+                    background: '#274077',
+                    cards: '#14213D',
+                    text: '#FFFFFF',
+                }
+            }
+        },
+
+        fontFamily: {
+            sans: ['Martian Mono', 'sans-serif'],
+        }
     },
     plugins: [],
 }
