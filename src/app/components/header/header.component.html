@@ -1,8 +1,26 @@
-<header class="bg-sitecolors-cards flex items-center">
-    <img src="../../assets/images/otter.png" alt="logo" class="w-28 my-4 mx-8">
-    <nav class="bg-white/[.20] rounded-md p-2 justify-self-center flex">
-        <a href="#">Accueil</a>
-        <a href="#">Flashcard</a>
-        <a href="#">Profil</a>
+<header class="bg-sitecolors-cards flex items-center justify-between">
+    <img src="../../assets/images/otter.png" alt="logo" class="w-16 sm:w-28 my-4 ml-4 lg:ml-16 xl:ml-24">
+    <h1 class="text-xl sm:text-3xl">DevFlashCard</h1>
+
+    <!-- Large Screen Menu -->
+    <nav *ngIf="!isScreenSmall" class="rounded-md py-2 mr-4 lg:mr-16 xl:mr-40 flex">
+        <a href="#" class="ml-2 lg:ml-8 hover:underline">Accueil</a>
+        <a href="#" class="mx-12 lg:mx-32 hover:underline">Flashcard</a>
+        <a href="#" class="mr-2 lg:mr-8 hover:underline">Profil</a>
     </nav>
+
+    <!-- Small Screen Menu -->
+    <div class="relative mr-12" *ngIf="isScreenSmall">
+        <button (click)="toggleMenu()" class="">
+            <img src="../../assets/images/menus.png" alt="menu" class="w-12">
+        </button>
+        <!-- Dropdown menu (ngIf directive to control visibility) -->
+        <nav *ngIf="isMenuOpen" class="absolute top-4 right-0 rounded-md p-2 mt-10 ml-4 flex bg-white">
+            <ul class="list-none p-0">
+                <li class="mt-2"><a href="#" class="hover:underline text-black">Accueil</a></li>
+                <li class="my-4"><a href="#" class="hover:underline text-black">Flashcard</a></li>
+                <li class="mb-2"><a href="#" class="hover:underline text-black">Profil</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
