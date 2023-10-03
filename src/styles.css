@@ -8,5 +8,9 @@
 }
 
 * {
-    @apply text-white
+    @apply text-white;
+}
+
+body {
+    @apply bg-sitecolors-background;
 }
